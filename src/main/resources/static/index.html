@@ -3,16 +3,29 @@
 <head>
     <title>Your first Spring application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-<p><a href="/hello">Greet the world!</a></p>
 
-<form action="/hello" method="GET" id="nameForm">
+<h1>Favorite Books</h1>
+
+<p>Welcome to your favorite books list! Use this website to track your favorite books!</p>
+
+<form action="/add_favorite" method="POST" id="favoriteForm">
     <div>
-        <label for="nameField">How should the app call you?</label>
-        <input name="myName" id="nameField">
-        <button>Greet me!</button>
+        <label for="bookField">Add a book to your favorites!</label>
+        <input name="bookName" id="bookField">
+        <button>Add Favorite!</button>
     </div>
 </form>
+
+<p><b>You have <span id="numFavorites">#</span> favorite books</b></p>
+
+<ol id="favoriteBooks"></ol>
 </body>
 </html>
