@@ -34,8 +34,7 @@ public class SpringDemoApplication {
     }
 
     @PostMapping("/add_favorite")
-    public String addFavorite(@RequestParam(value = "bookName") String bookName) {
+    public void addFavorite(@RequestParam(value = "bookName") String bookName) {
         favorites.add(bookName);
-        return "Worked!";
     }
 }
