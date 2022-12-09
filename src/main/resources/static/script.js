@@ -21,8 +21,6 @@
     }
 
     function refreshState() {
-        console.log("Refreshing");
-
         // Get all of the favorites
         $.ajax({
             url: "/get_favorites",

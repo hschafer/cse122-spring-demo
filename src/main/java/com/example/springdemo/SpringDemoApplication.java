@@ -14,21 +14,14 @@ import java.util.List;
 @SpringBootApplication
 @RestController
 public class SpringDemoApplication {
-
-    private FavoritesList favorites;
-
-    public SpringDemoApplication() {
-        super();
-        favorites = new FavoritesList();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(SpringDemoApplication.class, args);
     }
 
-    @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
-        return String.format("Hello %s!", name);
+    private FavoritesList favorites;
+
+    public SpringDemoApplication() {
+        favorites = new FavoritesList();
     }
 
     @GetMapping("/get_favorites")
@@ -45,7 +38,4 @@ public class SpringDemoApplication {
         favorites.add(bookName);
         return "Worked!";
     }
-
-
-
 }
